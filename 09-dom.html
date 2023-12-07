@@ -6,108 +6,32 @@
     <title>DOM</title>
 </head>
 <body>
+    <button>hello</button>
+    <button class="js-button">Second button</button>
+
     <script>
+
+        console.log(document.querySelector('button').innerHTML);
+        document.querySelector('button')
+        .innerHTML = 'click me';
+
+        const buttonElement = document.querySelector('.js-button');
+        console.log(buttonElement);
+
         /*
-        //object
-        const product = {
-            //property : value
-            name : 'socks',
-            price : 1090
-        };
+        console.log(document.title);
+        document.title = 'Changed';
 
-        console.log(product);
-        console.log(product.name);
+        console.log(document.body);
+        console.log(typeof document.body);
 
-        //add new object's property
-        product.newProperty = true;
-        console.log(product);
-
-        //delete property
-        delete product.newProperty;
-        console.log(product);
-
-        */
+        //innerHTML (control of html in body)
+        document.body.innerHTML = 'Changed';
 
         
-        /* LESSONS 2
-
-        const product2 = {
-            name : 'shirt' ,
-            'delivery-time' : 12,
-            //nested
-            rating: {
-                stars : 4.5,
-                count : 87
-            },
-            fun : function function1(){
-                console.log('function is also a value');
-            }
-        };
-        console.log(product2['name']);
-        console.log(product2['delivery-time']);
-        console.log(product2.rating.count);
-        product2.fun();
-
-        //JSON built-in objects (syntax)
-        //do not support function as object's attb
-
-        //convert JS Object to JSON
-        console.log(JSON.stringify(product2));
-
-        //convert JSON to JS Object
-        const jsonString = JSON.stringify(product2);
-        console.log (JSON.parse(jsonString));
-
-        //local storage (does not delete data after refresh page)
-
+        document.body.innerHTML = 'hello';
+        document.title = 'Why';
         */
-
-        //AUTO-BOXING
-        console.log('hello'.length);
-        console.log('hello'.toUpperCase());
-
-        const object1 = {
-            message : 'hello',
-        };
-
-        //copy reference (object is reference)
-        const object2 = object1;
-
-        object1.message = 'NICE TRY';
-        console.log(object1);
-        console.log(object2);
-
-        const object3 = {
-            message : 'NICE TRY',
-     
-        };
-
-        console.log(object1 === object3);
-        console.log(object1 === object2);
-
-        //shortcut object
-        const object4 = {
-            message : 'NICE TRY',
-            price : 321
-        };
-
-        //const message = object4.message
-        //take out property out of object
-        const {message , price} = object4;
-        console.log(message);
-        console.log(price);
-
-        const object5 = {
-            //message : message
-            message,
-            method(){
-                console.log('method');
-            }
-        };
-
-        console.log(object5);
-        object5.method();
-
     </script>
 </body>
 </html>
