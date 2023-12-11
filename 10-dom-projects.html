@@ -3,21 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM Project</title>
+    <title>DOM Project w/ CSS</title>
+
+<style>
+
+body{
+        font-family: Arial;
+    }
+
+    .subscribe-button{
+        border: none;
+        font-weight: bold;
+        border-radius: 50px;
+        padding: auto;
+        height: 35px;
+        width: 100px;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+        margin-bottom: 30px;
+    }
+
+    .is-subscribed{
+        background-color: grey;
+        color: black;
+    }
+
+    .cost-input{
+        font-size: 15px;
+        padding: 10px ;
+    }
+    
+.calculate-button{
+    border: none;
+    font-size: 15px;
+    padding: 12px 15px;
+    color: white;
+    background-color: rgb(13, 122, 36);
+    cursor: pointer;
+}
+
+</style>
+
 </head>
 <body>
     <p>Youtube Subscribe Button</p>
     <button onclick="
         subscribe();
-    " class="js-subscribe-button">Subscribe</button>
+    " class="js-subscribe-button subscribe-button">Subscribe</button>
 
     <p>Amazon Shopping Calculator</p>
-    <input placeholder="Cost of order" class="js-cost-input" onkeydown="
+    <input placeholder="Cost of order" class="js-cost-input cost-input" onkeydown="
         handleCostKeyDown(event);
     ">
     <button onclick="
         calculateTotal();
-    ">Calculate</button>
+    " class="calculate-button">Calculate</button>
 
     <p class="js-total-cost"></p>
 
@@ -57,11 +98,15 @@
         function subscribe(){
             const buttonElement = document.querySelector('.js-subscribe-button');
     
+            //.classList --> give control of class attribute
+
             //innnerText --> ignore the spaces in html
             if(buttonElement.innerText === 'Subscribe'){
                 buttonElement.innerHTML = 'Subscribed';
+                buttonElement.classList.add('is-subscribed');
             }else{
                 buttonElement.innerHTML = 'Subscribe';
+                buttonElement.classList.remove('is-subscribed');
             }
         }
     </script>

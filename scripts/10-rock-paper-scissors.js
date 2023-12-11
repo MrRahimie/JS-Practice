@@ -1,46 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
-</head>
-<body>
-    <p>Rock Paper Scissors</p>
-    <button onclick="
-        
-        playGame('rock')
-       
-      
-    ">Rock</button>
-
-    <button onclick="
-    
-        playGame('paper');        
-    
-    ">Paper</button>
-    <button onclick="
-    playGame('scissors');
-       
-    ">Scissors</button>
-
-    <p class="js-result"></p>
-    <p class="js-moves"></p>
-    <p class="js-score"></p>
-    
-    <button onclick="
-        score.wins = 0;
-        score.losses = 0;
-        score.ties = 0;
-        localStorage.removeItem(score);
-        updateScoreElement();
-    ">Reset Score</button>
-
-    <p><a href="">Click here</a> to see the final version of the project</p>
-
-    <script>
-
-        //save the last time scores
+ //save the last time scores
         //using default operator
         let score = JSON.parse(localStorage.getItem('score')) ||
         {
@@ -116,7 +74,10 @@
             .innerHTML = result;
 
             document.querySelector('.js-moves')
-            .innerHTML = `You ${playerMove} - ${computerMove} Computer`;
+            .innerHTML =  `You
+        <img src="images/${playerMove}-emoji.png" class="move-icon" alt="">
+        <img src="images/${computerMove}-emoji.png" class="move-icon" alt="">
+        Computer`;
 
       
            }
@@ -146,7 +107,3 @@
 
             return computerMove;
         }
-    </script>
-
-</body>
-</html>
