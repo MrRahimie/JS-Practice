@@ -8,7 +8,7 @@
 <body>
     <p>Rock Paper Scissors</p>
     <button onclick="
-        
+        //function to play game as rock
         playGame('rock')
        
       
@@ -29,12 +29,15 @@
     <script>
 
         function playGame(playerMove){
+            //called function to get computer's move
+            //variable is constant
             const computerMove = pickComputerMove();
         
+            //assign result as string
             let result ='';   
 
             if(playerMove === 'scissors'){
-                if(computerMove === playerMove){
+                if(computerMove === 'rock'){
                     result = 'You lose';
                 }else if(computerMove === 'scissors'){
                     result = 'tie'
@@ -71,6 +74,7 @@
 
         const randomNumber = Math.random();
 
+        //assign computer's move as string
         let computerMove = '';
        
         
