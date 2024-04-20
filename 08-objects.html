@@ -25,7 +25,6 @@
         //delete property
         delete product.newProperty;
         console.log(product);
-
         */
 
         
@@ -33,6 +32,7 @@
 
         const product2 = {
             name : 'shirt' ,
+            //because - will be detect as minus 
             'delivery-time' : 12,
             //nested
             rating: {
@@ -48,13 +48,17 @@
         console.log(product2.rating.count);
         product2.fun();
 
+        Java Script Object Notation
+        - send data btween computers
+        - store data
+
         //JSON built-in objects (syntax)
         //do not support function as object's attb
 
-        //convert JS Object to JSON
-        console.log(JSON.stringify(product2));
+        //convert JS Object to JSON <<JSON.stringify>>
+        console.log(JSON.stringify(product2)); <-- save object in string
 
-        //convert JSON to JS Object
+        //convert JSON to JS Object <<JSON.parse>>
         const jsonString = JSON.stringify(product2);
         console.log (JSON.parse(jsonString));
 
@@ -81,7 +85,7 @@
             message : 'NICE TRY',
      
         };
-
+        //objects are reference (not compare value)
         console.log(object1 === object3);
         console.log(object1 === object2);
 
@@ -99,7 +103,9 @@
 
         const object5 = {
             //message : message
+            //shorthand property
             message,
+            //shorthand fx
             method(){
                 console.log('method');
             }

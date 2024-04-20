@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Function</title>
+</head>
+<body>
+
+  <button onclick="" class="js-button">Click</button>
+  
+  <script>
+
+    const  button = document.querySelector('.js-button');
+
+    const evenListener = () => {
+        console.log("Button clicked!");
+      };
+
+    //best practice
+    button.addEventListener('click',evenListener);
+
+    button.removeEventListener('click',evenListener);
+
+    //functions are value
+   /* function greeting() {
+      console.log("GOAT");
+    }
+
+    const greet = function() {
+      console.log("GOAT2");
+    }
+
+    greeting();
+    greet();
+    
+
+
+
+    //Asychronous setTimeout
+    //after 3 sec
+    setTimeout(function () {
+      console.log("timeout");
+    } , 3000);
+    console.log('next line');
+
+    //Synchronous timeout
+    //Asychronous setTimeout
+    //after 3 sec
+    setTimeout(function () {
+      console.log("timeout");
+      console.log('next line');
+    } , 3000);
+    
+    //SET INTERVAL
+    setInterval(function(){
+      console.log("PEN MERCH")
+    },3000)
+*/
+
+//another way to do for loop on array
+//for each loop
+    [
+      'eat',
+      'drink',
+      'sleep'
+    ].forEach((value,index) =>{
+      console.log(index);
+      console.log(value);
+    });
+
+  //arrow function
+
+  const regFunction = function(param,param2){
+    console.log('hello1');
+    return  param + param2;
+  };
+
+  const arrowFunction = (param,param2) => {
+    console.log('hello');
+    return param + param2;
+  };
+  arrowFunction();
+
+  //diff reg <-> arrow function
+  const oneParam = (param) => {
+    console.log(param +2);
+  };
+  oneParam(2);
+
+  const oneLine = ()=> 2 + 3;
+
+  console.log(oneLine());
+
+  //this keyword in arrow functions
+  let objArrowFunc ={
+    name : "John",
+    sayHello: ()=>console.log(`Hello ${this.name}`)
+  };
+  objArrowFunc.sayHello();
+
+  //only print the positive value
+  //create new array and return true value
+  console.log([1,-3,4].filter((value,index) => {
+    if(value>=0){
+      return true;
+    }else{
+      return false;
+    }
+  }));
+  
+  //create new array and return all value to array
+  console.log([1,1,3].map((value, index) =>{
+    return value + 10;
+  }));
+
+  //shortcut
+  console.log([1,1,3].map(value => value + 10));
+  </script>
+</body>
+</html>
